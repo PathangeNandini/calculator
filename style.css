@@ -1,0 +1,135 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsla(40, 20%, 90%, 0.459);
+}
+
+#calc{
+    font-family: Arial, sans-serif;
+    background-color: hsla(40, 20%, 18%, 0.459);
+    border-radius: 15px;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+#display{
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    text-align: left;
+    border: none;
+    background-color: hsla(40, 12%, 25%, 0.842);
+    color: rgb(235, 233, 229);;
+
+}
+
+#keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px;
+}
+
+button{
+    width: 100px;
+    height: 100px;
+    border-radius: 40px;
+    border: none;
+    background-color: hsl(39, 19%, 18%);
+    color: rgb(235, 233, 229);
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease,box-shadow 0.15s ease,background-color 0.2s ease;
+}
+
+button:hover{
+    background-color:  hsl(39, 19%, 30%);  
+}
+
+button:active{
+    background-color:  hsl(39, 19%, 50%);  
+    transform: scale(0.92);
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.op-btn{
+    background-color: rgb(238, 70, 70);
+}
+.op-btn:hover{
+    background-color: rgba(238, 70, 70, 0.651);
+}  
+
+.op-btn:active{
+    background-color: rgba(238, 70, 70, 0.548);
+}
+@media (max-width: 480px){
+
+    body{
+        padding: 10px;
+        height: 100vh;
+    }
+
+    #calc{
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    #display{
+        font-size: 2.5rem;
+        padding: 15px;
+    }
+
+    #keys{
+        gap: 8px;
+        padding: 15px;
+    }
+
+    button{
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+        border-radius: 30px;
+        
+    }
+}
+@media (min-width: 481px) and (max-width: 1024px){
+
+    body{
+        padding: 20px;
+        height: 100vh;
+    }
+
+    #calc{
+        max-width: 420px;
+    }
+
+    #display{
+        font-size: 3.5rem;
+        padding: 18px;
+    }
+
+    #keys{
+        gap: 10px;
+        padding: 20px;
+    }
+
+    button{
+        width: 85px;
+        height: 85px;
+        font-size: 2.4rem;
+        border-radius: 35px;
+    }
+}
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.result-animate{
+    animation: pop 0.25s ease;
+}
